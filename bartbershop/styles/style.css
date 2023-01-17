@@ -38,6 +38,10 @@ html {
     height: 100%;
 }
 
+*:focus {
+    outline: none;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -81,10 +85,21 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     padding: 14px 20px;
-    transition: all 0.2s ease-in;
+    transition: all 0.1s ease-in;
     background-repeat: no-repeat;
     background-position: center;
     border: none;
+}
+
+.button:hover {
+    background: #DBB590;
+}
+
+.button:focus {
+    background: #DBB590;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 3px #AF7842 solid;
 }
 
 .button-all {
@@ -130,7 +145,7 @@ body {
     cursor: pointer;
     top: 50%;
     transform: translateY(-50%);
-    transition: background-color 0.2s ease-in;
+    transition: background-color 0.1s ease-in;
 }
 
 .slider-button:hover {
@@ -607,16 +622,26 @@ body {
     background-position: center;
     cursor: pointer;
     background-color: #000000;
+    transition: all 0.1s ease-in;
 }
 
 .social-twitter {
     background-image: url('../images/social/twitter.svg');
+}
+.social-twitter:hover {
+    background-image: url('../images/social/twitter-hover.svg');
+}
+.social-vk:hover {
+    background-image: url('../images/social/vk-hover.svg');
 }
 .social-vk {
     background-image: url('../images/social/vk.svg');
 }
 .social-instagram {
     background-image: url('../images/social/instagram.svg');
+}
+.social-instagram:hover {
+    background-image: url('../images/social/instagram-hover.svg');
 }
 
 .footer-social-item:nth-child(3n) {
