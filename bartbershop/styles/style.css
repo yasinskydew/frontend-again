@@ -82,6 +82,9 @@ body {
     text-transform: uppercase;
     padding: 14px 20px;
     transition: all 0.2s ease-in;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 .button-all {
@@ -570,6 +573,7 @@ body {
     background-position: center;
     cursor: pointer;
     width: 56px;
+    border: none;
 }
 
 .footer-contacts {

@@ -45,7 +45,7 @@
   </header>
   <main class="main-inner main-container">
     <div class="page-container">
-      <header class="inner-header-title">
+      <header class="inner-header">
         <h1 class="inner-header-title">Каталог</h1>
         <ul class="breadcrumbs">
           <li class="breadcrumbs-item">
@@ -61,46 +61,46 @@
         <form class="catalog-filter" action="http://localhost:8080" method="get">
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Цена</legend>
-            <label class="control">
-              <input type="range" min="0" max="9000" value="200">
-            </label>
-            <label class="control">
-              <input type="range" min="0" max="9000" value="8000">
-            </label>
-            <span class="control-view">от 50 ₽ до 1500 ₽</span>
+            <div class="range">
+              <div class="range-slider">
+                <span class="range-selected"></span>
+              </div>
+              <div class="range-input">
+                <input type="range" class="min" min="0" max="2000" value="300" step="10">
+                <input type="range" class="max" min="0" max="2000" value="1700" step="10">
+              </div>
+              <div class="range-price">
+                <p>от <span id="range-price-min">300</span> ₽</p>
+                <p>до <span id="range-price-max">1700</span> ₽</p>
+              </div>
+            </div>
           </fieldset>
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Производители</legend>
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" name="Bed Head for Men">Bed Head for Men
-                </label>
+                <input type="checkbox" id="bedHead" class="control-input" name="Bed Head for Men">
+                <label class="control"  for="bedHead">Bed Head for Men</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" checked name="Homme Deep Cleansing Cool">Homme Deep Cleansing Cool
-                </label>
+                <input type="checkbox" class="control-input" id="homme" checked name="Homme Deep Cleansing Cool">
+                <label class="control" for="homme">Homme Deep Cleansing Cool</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" checked name="So Intense">So Intense
-                </label>
+                <input type="checkbox" class="control-input" id="intense" name="So Intense">
+                <label class="control" for="intense">So Intense</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" name="Sprekenhus">Sprekenhus
-                </label>
+                <input type="checkbox" id="sprekenhus" class="control-input" name="Sprekenhus">
+                <label class="control" for="sprekenhus">Sprekenhus</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" name="Firm Storе">Firm Storе
-                </label>
+                <input type="checkbox" id="firmStorе" class="control-input" name="Firm Storе">
+                <label class="control" for="firmStorе">Firm Storе</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="checkbox" class="control-input" checked name="Winter Body">Winter Body
-                </label>
+                <input type="checkbox" id="winterBody" class="control-input" checked name="Winter Body">
+                <label class="control" for="winterBody">Winter Body</label>
               </li>
             </ul>
           </fieldset>
@@ -108,37 +108,38 @@
             <legend class="catalog-filter-title">Группы товаров</legend>
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="radio" class="control-input" name="Бритвенные принадлежности">Бритвенные принадлежности
-                </label>
+                <input type="radio" id="bladeAccess" class="control-radio" name="control-radio">
+                <label class="control" for="bladeAccess">Бритвенные принадлежности</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="radio" class="control-input" name="Средства для ухода" checked>Средства для ухода
-                </label>
+                <input type="radio" id="leaveAccess" class="control-radio" name="control-radio" checked>
+                <label class="control" for="leaveAccess">Средства для ухода</label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input type="radio" class="control-input" name="Аксессуары">Аксессуары
-                </label>
+                <input type="radio" id="access" class="control-radio" name="control-radio">
+                <label class="control" for="access">Аксессуары</label>
               </li>
             </ul>
           </fieldset>
-          <button class="button" type="submit">Показать</button>
+          <button class="button catalog-filter-submit" type="submit">Показать</button>
         </form>
         <div class="catalog-right-column">
           <div class="sorting-container">
-            <select class="select-control" aria-label="Сортировка">
-              <option value="popular">Сначала популярное</option>
-              <option value="cheap">Сначала дешёвое</option>
-              <option value="expensive">Сначала дорогое</option>
-            </select>
-            <a href="#" class="button button-light">
-              <span class="visually-hidden">Показать список</span>
-            </a>
-            <a href="#" class="button">
-              <span class="visually-hidden">Показать карточки</span>
-            </a>
+            <div class="select-control-container">
+              <select class="select-control" aria-label="Сортировка">
+                <option value="popular">Сначала популярное</option>
+                <option value="cheap">Сначала дешёвое</option>
+                <option value="expensive">Сначала дорогое</option>
+              </select>
+            </div>
+            <div class="control-button-container">
+              <a href="#" class="button button-light button-control button-list">
+                <span class="visually-hidden">Показать список</span>
+              </a>
+              <a href="#" class="button button-card button-control">
+                <span class="visually-hidden">Показать карточки</span>
+              </a>
+            </div>
           </div>
           <ul class="product-list">
             <li class="product-card">
@@ -216,29 +217,34 @@
           </ul>
           <ul class="pagination">
             <li class="pagination-item">
-              <a class="pagination-link pagination-prev pagination-disabled">
+              <a class="pagination-link pagination-arrow pagination-disabled">
                 <span class="visually-hidden">Предыдущая страница</span>
+                <img src="images/pagination/arrow-left.svg" alt="arrow">
               </a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link pagination-current">1</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-current">2</a>
+              <a class="pagination-link">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-current">3</a>
+              <a class="pagination-link">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-current">4</a>
+              <a class="pagination-link">4</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-current">5</a>
+              <a class="pagination-link">5</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-next" href="#">
+              <a class="pagination-link pagination-arrow pagination-disabled">
                 <span class="visually-hidden">Следующая страница</span>
+                <img src="images/pagination/arrow-right.svg" alt="arrow">
               </a>
+            </li>
+            <li class="pagination-item pagination-else">
+              <a class="pagination-link" href="#">Показать ещё</a>
             </li>
           </ul>
         </div>
@@ -293,5 +299,6 @@
       </section>
     </div>
   </footer>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
